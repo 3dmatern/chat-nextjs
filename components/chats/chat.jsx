@@ -1,13 +1,13 @@
-import { ChatMessage } from "./chat-message";
-import { MESSAGES } from "./constants";
+import { ChatMessage } from "@/components/chats/chat-message";
+import { MESSAGES } from "@/components/chats/constants";
 
-import { ChatLayout } from "./ui/chat-layout";
+import { ChatLayout } from "@/components/chats/ui/chat-layout";
 
-export function Chat() {
+export function Chat({ chatId }) {
     return (
         <ChatLayout>
-            {MESSAGES.map((message, index) => (
-                <ChatMessage key={index} message={message} />
+            {MESSAGES.filter((c) => c.chatId === chatId).map((message) => (
+                <ChatMessage key={message.id} message={message} />
             ))}
         </ChatLayout>
     );

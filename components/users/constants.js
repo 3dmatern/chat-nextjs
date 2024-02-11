@@ -14,7 +14,7 @@ export const USERS = [
         premium: false,
         confirmed_account: false,
         confirmed_email: true,
-        created_at: Date.now(),
+        created_at: new Date(1995, 0, 27, 16).getTime(),
     },
     {
         id: "asd",
@@ -27,7 +27,7 @@ export const USERS = [
         premium: false,
         confirmed_account: false,
         confirmed_email: true,
-        created_at: Date.now(),
+        created_at: new Date(2001, 6, 17).getTime(),
     },
     {
         id: "zxc",
@@ -40,6 +40,6 @@ export const USERS = [
         premium: false,
         confirmed_account: true,
         confirmed_email: true,
-        created_at: Date.now(),
+        created_at: new Date(2013, 0, 1).getTime(),
     },
 ];

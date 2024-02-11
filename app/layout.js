@@ -2,7 +2,7 @@ import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 
 import { cn } from "@/lib/utils";
-import { ThemeProvider } from "@/components/themes-provider";
+import { Navbar } from "@/components/navbar";
 
 export const fontSans = FontSans({
     subsets: ["cyrillic", "latin"],
@@ -31,14 +31,8 @@ export default function RootLayout({ children }) {
                     fontSans.variable
                 )}
             >
-                <ThemeProvider
-                    attribute="class"
-                    defaultTheme="system"
-                    enableSystem
-                    disableTransitionOnChange
-                >
-                    {children}
-                </ThemeProvider>
+                <Navbar />
+                {children}
             </body>
         </html>
     );

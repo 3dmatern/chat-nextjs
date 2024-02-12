@@ -1,18 +1,15 @@
-import { USERS } from "../users/constants";
-
-export function ChatMessage({ message }) {
-    const currentUser = USERS[1];
+export function ChatMessage({ message, currentUserId }) {
     const { userId, text, timestamp } = message;
 
     return (
         <div
             className={`mb-4 ${
-                userId === currentUser.id ? "text-right" : "text-left"
+                userId === currentUserId ? "text-right" : "text-left"
             }`}
         >
             <div
                 className={`w-max flex items-end gap-4 p-2 rounded ${
-                    userId === currentUser.id
+                    userId === currentUserId
                         ? "ml-auto bg-blue-500"
                         : "bg-gray-300"
                 }`}

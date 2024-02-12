@@ -1,5 +1,5 @@
-import { Chats } from "@/components/chats/chats";
-import { USERS } from "@/components/users/constants";
+import { Chats } from "@/components/chats";
+import { USERS } from "@/components/constants";
 
 export default function ChatsPage() {
     const currentUser = USERS[1];

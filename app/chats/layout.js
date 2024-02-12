@@ -4,5 +4,5 @@ export const metadata = {
 };
 
 export default function ChatsLayout({ children }) {
-    return <main className="mt-5">{children}</main>;
+    return <main className="h-[calc(100vh-73px)] mt-5 px-5">{children}</main>;
 }

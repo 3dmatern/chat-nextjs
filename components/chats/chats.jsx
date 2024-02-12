@@ -1,7 +1,8 @@
 import { ChatsLayout } from "@/components/chats/ui/chats-layout";
-import { CHATS, CHAT_MEMBERS, MESSAGES } from "@/components/chats/constants";
-import { ChatCard } from "./ui/chat-card";
-import { USERS } from "../users/constants";
+import { CHATS, CHAT_MEMBERS } from "@/components/chats/constants";
+import { ChatCard } from "@/components/chats/ui/chat-card";
+import { USERS } from "@/components/constants";
+import { MESSAGES } from "@/components/constants";
 
 export function Chats({ currentUser }) {
     return (

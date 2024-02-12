@@ -8,7 +8,7 @@ export default function Home() {
                 <span className="inline-block">
                     <MenuIcon />
                 </span>
-                в правом верхнем углу экрана и перейдите по ссылкам :)
+                в левом верхнем углу экрана и перейдите по ссылкам :)
             </span>
         </main>
     );

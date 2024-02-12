@@ -1,4 +1,4 @@
-import { USERS } from "@/components/users/constants";
+import { USERS } from "@/components/constants";
 
 import { UserCard } from "@/components/users/ui/user-card";
 import { UsersLayout } from "@/components/users/ui/users-layout";

@@ -47,7 +47,7 @@ export const createChat = async (values) => {
         revalidatePath("/chats", "layout");
 
         return {
-            success: true,
+            success: id,
         };
     } catch (error) {
         console.error("Error creating chat: ", error);

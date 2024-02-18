@@ -1,12 +1,14 @@
-import Link from "next/link";
+"use client";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 
-export function UserCard({ user }) {
+export function UserCard({ user, onClick }) {
     return (
-        <Link
-            href="#"
-            className="flex items-center gap-3 py-2 px-3 hover:bg-slate-100"
+        <Button
+            variant="outline"
+            onClick={onClick}
+            className="flex items-center gap-3 py-6 rounded-none border-none shadow-none"
         >
             <Avatar>
                 <AvatarImage src={user?.avatar} />
@@ -17,10 +19,10 @@ export function UserCard({ user }) {
                 <span className="font-semibold">
                     {user?.firstname} {user?.lastname}
                 </span>
-                <span className="text-xs">
+                <span className="text-xs text-slate-400">
                     {new Date(user?.createdAt).toDateString()}
                 </span>
             </div>
-        </Link>
+        </Button>
     );
 }

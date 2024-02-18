@@ -11,5 +11,5 @@ export default async function UsersPage() {
     const currentUser = USERS[1];
     const users = await getUsersNotCurrentUser(currentUser.id);
 
-    return <Users users={users} />;
+    return <Users currentUserId={currentUser.id} users={users} />;
 }

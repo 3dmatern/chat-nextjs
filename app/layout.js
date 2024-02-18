@@ -3,6 +3,7 @@ import "./globals.css";
 
 import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/navbar";
+import { Toaster } from "@/components/ui/sonner";
 
 export const fontSans = FontSans({
     subsets: ["cyrillic", "latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
             >
                 <Navbar />
                 {children}
+                <Toaster />
             </body>
         </html>
     );

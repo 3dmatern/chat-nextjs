@@ -14,7 +14,7 @@ export function NavigationMenu() {
     return (
         <Sheet>
             <SheetTrigger className="size-4">
-                <MenuIcon />
+                <MenuIcon className={"pointer-events-none"} />
             </SheetTrigger>
             <SheetContent side="left">
                 <SheetHeader className="mb-5">

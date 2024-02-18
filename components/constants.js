@@ -4,7 +4,7 @@ import avatarPic3 from "@/components/users/images/avatar_3.jpg";
 
 export const USERS = [
     {
-        id: "qwe",
+        id: "clsrdyh2k0000capr98c9gr34",
         firstname: "Денис",
         lastname: "Матерн",
         username: "@d_matern",
@@ -17,7 +17,7 @@ export const USERS = [
         created_at: new Date(1995, 0, 27, 16).getTime(),
     },
     {
-        id: "asd",
+        id: "clsrdyh2k0001caprjvx4uhqm",
         firstname: "Виктория",
         lastname: "Мирошниченко",
         username: "Pudding279",

@@ -4,7 +4,7 @@ import { UsersLayout } from "@/components/users/ui/users-layout";
 export function Users({ users }) {
     return (
         <UsersLayout>
-            {users.map((user) => (
+            {users?.map((user) => (
                 <UserCard key={user.id} user={user} />
             ))}
         </UsersLayout>

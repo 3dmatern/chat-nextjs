@@ -15,7 +15,7 @@
 
 # production
 /build
-scripts/seed.js
+prisma/seed.js
 .env
 
 # misc

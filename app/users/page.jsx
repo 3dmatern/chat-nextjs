@@ -1,3 +1,5 @@
+import { getUsersNotCurrentUser } from "@/actions/user";
+import { USERS } from "@/components/constants";
 import { Users } from "@/components/users";
 
 export const metadata = {
@@ -5,6 +7,9 @@ export const metadata = {
     description: "Chat developed on Next.js using websockets",
 };
 
-export default function UsersPage() {
-    return <Users />;
+export default async function UsersPage() {
+    const currentUser = USERS[1];
+    const users = await getUsersNotCurrentUser(currentUser.id);
+
+    return <Users users={users} />;
 }

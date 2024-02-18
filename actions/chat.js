@@ -6,7 +6,7 @@ import { db } from "@/lib/db";
 import { ChatSchema } from "@/schemas";
 import { getUserById } from "@/data/user";
 
-export async function createChat(values) {
+export const createChat = async (values) => {
     const validatedFields = ChatSchema.safeParse(values);
 
     if (!validatedFields.success) {
@@ -56,4 +56,4 @@ export async function createChat(values) {
             error: "Ошибка при создании чата!",
         };
     }
-}
+};

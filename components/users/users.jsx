@@ -1,12 +1,10 @@
-import { USERS } from "@/components/constants";
-
 import { UserCard } from "@/components/users/ui/user-card";
 import { UsersLayout } from "@/components/users/ui/users-layout";
 
-export function Users() {
+export function Users({ users }) {
     return (
         <UsersLayout>
-            {USERS.map((user) => (
+            {users.map((user) => (
                 <UserCard key={user.id} user={user} />
             ))}
         </UsersLayout>

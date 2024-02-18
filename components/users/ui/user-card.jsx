@@ -8,7 +8,7 @@ export function UserCard({ user }) {
             className="flex items-center gap-3 py-2 px-3 hover:bg-slate-100"
         >
             <Image
-                src={user.avatar}
+                src={user?.avatar}
                 alt="avatar"
                 width={40}
                 height={40}
@@ -16,10 +16,10 @@ export function UserCard({ user }) {
             />
             <div className="flex flex-col text-start">
                 <span className="font-semibold">
-                    {user.firstname} {user.lastname}
+                    {user?.firstname} {user?.lastname}
                 </span>
                 <span className="text-xs">
-                    {new Date(user.created_at).toDateString()}
+                    {new Date(user?.createdAt).toDateString()}
                 </span>
             </div>
         </Link>

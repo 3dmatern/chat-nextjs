@@ -9,19 +9,19 @@ export function Chats({ currentUser }) {
         <ChatsLayout>
             {CHATS.map((chat) => (
                 <ChatCard
-                    key={chat.id}
+                    key={chat?.id}
                     user={USERS.find(
                         (u) =>
                             u.id ===
                             CHAT_MEMBERS.find(
                                 (cm) =>
-                                    cm.chatId === chat.id &&
-                                    cm.userId !== currentUser.id
+                                    cm?.chatId === chat?.id &&
+                                    cm?.userId !== currentUser?.id
                             ).userId
                     )}
                     lastMessage={
-                        MESSAGES.filter((m) => m.chatId === chat.id)[
-                            MESSAGES.filter((m) => m.chatId === chat.id)
+                        MESSAGES.filter((m) => m.chatId === chat?.id)[
+                            MESSAGES.filter((m) => m.chatId === chat?.id)
                                 .length - 1
                         ]
                     }

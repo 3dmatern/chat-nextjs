@@ -21,7 +21,7 @@ export const USERS = [
         firstname: "Виктория",
         lastname: "Мирошниченко",
         username: "Pudding279",
-        email: "miroshnichenkovictoryia343@gmail.com",
+        email: "miroshnichenkovictoria343@gmail.com",
         password: "654321",
         avatar: avatarPic2,
         premium: false,

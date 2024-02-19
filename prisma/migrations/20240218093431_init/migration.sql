@@ -29,6 +29,7 @@ CREATE TABLE "ChatMember" (
     "id" TEXT NOT NULL,
     "chatId" TEXT NOT NULL,
     "userId" TEXT NOT NULL,
+    "companionId" TEXT NOT NULL,
 
     CONSTRAINT "ChatMember_pkey" PRIMARY KEY ("id")
 );

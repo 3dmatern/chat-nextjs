@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -37,11 +34,12 @@ model Chat {
 }
 
 model ChatMember {
-  id     String @id @default(cuid())
-  chatId String
-  chat   Chat   @relation(fields: [chatId], references: [id])
-  userId String
-  user   User   @relation(fields: [userId], references: [id])
+  id          String @id @default(cuid())
+  chatId      String
+  userId      String
+  companionId String
+  chat        Chat   @relation(fields: [chatId], references: [id])
+  user        User   @relation(fields: [userId], references: [id])
 }
 
 model ChatMessage {
@@ -50,7 +48,7 @@ model ChatMessage {
   updatedAt DateTime @updatedAt
   text      String
   chatId    String
-  chat      Chat     @relation(fields: [chatId], references: [id])
   userId    String
+  chat      Chat     @relation(fields: [chatId], references: [id])
   user      User     @relation(fields: [userId], references: [id])
 }

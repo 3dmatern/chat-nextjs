@@ -5,6 +5,7 @@ import { revalidatePath } from "next/cache";
 import { db } from "@/lib/db";
 import { ChatSchema } from "@/schemas";
 import { getUserById } from "@/data/user";
+import { getChatMemberIDs } from "@/data/chat";
 
 export const createChat = async (values) => {
     const validatedFields = ChatSchema.safeParse(values);
@@ -26,6 +27,20 @@ export const createChat = async (values) => {
     }
 
     try {
+        // check chat
+        const chat = await getChatMemberIDs({
+            userId: existingUser.id,
+            companionId: existingCompanion.id,
+        });
+        console.log(chat);
+        if (chat) {
+            console.log("чат существует");
+            return {
+                success: chat.id,
+            };
+        }
+
+        // else create chat
         const { id } = await db.chat.create({
             data: {
                 userId,
@@ -33,8 +48,16 @@ export const createChat = async (values) => {
         });
         const createChatMember = await db.chatMember.createMany({
             data: [
-                { chatId: id, userId: existingUser.id },
-                { chatId: id, userId: existingCompanion.id },
+                {
+                    chatId: id,
+                    userId: existingUser.id,
+                    companionId: existingCompanion.id,
+                },
+                {
+                    chatId: id,
+                    userId: existingCompanion.id,
+                    companionId: existingUser.id,
+                },
             ],
         });
 

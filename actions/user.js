@@ -1,3 +1,5 @@
+"use server";
+
 import { getAllUsersNotCurrentUser, getUserById } from "@/data/user";
 
 export const getUsersNotCurrentUser = async (userId) => {

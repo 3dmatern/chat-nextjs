@@ -11,3 +11,15 @@ export const getChatMemberIDs = async ({ userId, companionId }) => {
         return null;
     }
 };
+
+export const getChatById = async (chatId) => {
+    try {
+        const chat = await db.chat.findUnique({
+            where: { id: chatId },
+        });
+
+        return chat;
+    } catch (error) {
+        return null;
+    }
+};

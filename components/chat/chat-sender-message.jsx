@@ -5,11 +5,13 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { ChatMessageSchema } from "@/schemas/chat-message-schema";
+import { createChatMessage } from "@/actions/chat-message";
+
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-export function ChatSenderMessage({ chatId, userId, onSendMessage }) {
+export function ChatSenderMessage({ chatId, userId }) {
     const [isPending, startTransition] = useTransition();
 
     const form = useForm({
@@ -23,7 +25,7 @@ export function ChatSenderMessage({ chatId, userId, onSendMessage }) {
 
     const onSubmit = (values) => {
         startTransition(() => {
-            onSendMessage(values);
+            createChatMessage(values);
         });
         form.reset();
     };

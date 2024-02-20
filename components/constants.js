@@ -12,9 +12,9 @@ export const USERS = [
         password: "123456",
         avatar: avatarPic1,
         premium: false,
-        confirmed_account: false,
-        confirmed_email: true,
-        created_at: new Date(1995, 0, 27, 16).getTime(),
+        confirmedAccount: false,
+        confirmedEmail: true,
+        createdAt: new Date(1995, 0, 27, 16).getTime(),
     },
     {
         id: "clsrdyh2k0001caprjvx4uhqm",
@@ -25,9 +25,9 @@ export const USERS = [
         password: "654321",
         avatar: avatarPic2,
         premium: false,
-        confirmed_account: false,
-        confirmed_email: true,
-        created_at: new Date(2001, 6, 17).getTime(),
+        confirmedAccount: false,
+        confirmedEmail: true,
+        createdAt: new Date(2001, 6, 17).getTime(),
     },
     {
         id: "zxc",
@@ -38,9 +38,9 @@ export const USERS = [
         password: "123456",
         avatar: avatarPic3,
         premium: false,
-        confirmed_account: true,
-        confirmed_email: true,
-        created_at: new Date(2013, 0, 1).getTime(),
+        confirmedAccount: true,
+        confirmedEmail: true,
+        createdAt: new Date(2013, 0, 1).getTime(),
     },
 ];
 

@@ -14,11 +14,11 @@ export async function createChatMessage(values) {
     if (!validatedFields.success) return null;
 
     const { text, chatId, userId } = validatedFields.data;
-    const existingChat = getChatById(chatId);
+    const existingChat = await getChatById(chatId);
 
     if (!existingChat) return null;
 
-    const existingUser = getUserById(userId);
+    const existingUser = await getUserById(userId);
 
     if (!existingUser || existingChat.userId !== existingUser.id) return null;
 

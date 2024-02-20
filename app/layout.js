@@ -2,7 +2,6 @@ import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 
 import { cn } from "@/lib/utils";
-import { Navbar } from "@/components/navbar";
 import { Toaster } from "@/components/ui/sonner";
 
 export const fontSans = FontSans({
@@ -25,14 +24,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en">
+        <html lang="ru">
             <body
                 className={cn(
                     "bg-background font-sans antialiased",
                     fontSans.variable
                 )}
             >
-                <Navbar />
                 {children}
                 <Toaster />
             </body>

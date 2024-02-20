@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { NavigationMenu } from "@/components/navigation-menu";
+import { NavigationMenu } from "@/components/navbar/navigation-menu";
 
 export function Navbar() {
     return (

@@ -32,11 +32,10 @@ export const createChat = async (values) => {
             userId: existingUser.id,
             companionId: existingCompanion.id,
         });
-        console.log(chat);
+
         if (chat) {
-            console.log("чат существует");
             return {
-                success: chat.id,
+                success: chat.chatId,
             };
         }
 

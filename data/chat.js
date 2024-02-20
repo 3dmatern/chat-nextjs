@@ -2,7 +2,7 @@ import { db } from "@/lib/db";
 
 export const getChatMemberIDs = async ({ userId, companionId }) => {
     try {
-        const chat = await db.chatMember.findUnique({
+        const chat = await db.chatMember.findFirst({
             where: { userId, companionId },
         });
 

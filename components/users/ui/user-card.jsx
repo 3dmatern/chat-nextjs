@@ -17,7 +17,7 @@ export function UserCard({ user, onClick }) {
 
             <div className="flex flex-col text-start">
                 <span className="font-semibold">
-                    {user?.firstname} {user?.lastname}
+                    {user?.name} {user?.lastname}
                 </span>
                 <span className="text-xs text-slate-400">
                     {new Date(user?.createdAt).toDateString()}

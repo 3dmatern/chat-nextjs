@@ -17,7 +17,7 @@ export function ChatCard({ user, lastMessage }) {
             <div className="w-full text-start relative overflow-x-hidden">
                 <div className="flex items-center justify-between truncate">
                     <span className="font-semibold">
-                        {user?.firstname} {user?.lastname}
+                        {user?.name} {user?.lastname}
                     </span>
                     <span className="text-xs">
                         {String(

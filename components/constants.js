@@ -5,7 +5,7 @@ import avatarPic3 from "@/components/users/images/avatar_3.jpg";
 export const USERS = [
     {
         id: "clsrdyh2k0000capr98c9gr34",
-        firstname: "Денис",
+        name: "Денис",
         lastname: "Матерн",
         username: "@d_matern",
         email: "denismatern@gmail.com",
@@ -18,7 +18,7 @@ export const USERS = [
     },
     {
         id: "clsrdyh2k0001caprjvx4uhqm",
-        firstname: "Виктория",
+        name: "Виктория",
         lastname: "Мирошниченко",
         username: "Pudding279",
         email: "miroshnichenkovictoria343@gmail.com",
@@ -31,7 +31,7 @@ export const USERS = [
     },
     {
         id: "zxc",
-        firstname: "Мир",
+        name: "Мир",
         lastname: "Танков",
         username: "official_mirtankovru",
         email: "mirtankov@tanki.su",

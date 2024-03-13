@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { cn } from "@/lib/utils";
 import {
@@ -11,6 +12,8 @@ import {
 } from "@/components/ui/card";
 import welcomeMobileApp1 from "@/components/auth/images/welcome_mobile_app_1.png";
 import welcomeMobileApp2 from "@/components/auth/images/welcome_mobile_app_2.png";
+import { AndroidIcon } from "@/components/auth/icons/android-icon";
+import { WelcomeLink } from "@/components/auth/ui/welcome-link";
 
 export function Welcome({ className }) {
     return (
@@ -25,19 +28,25 @@ export function Welcome({ className }) {
                     ваших друзей, где бы вы ни находились.
                 </CardDescription>
             </CardHeader>
-            <CardContent className="relative w-max mx-auto">
+            <CardContent className="flex items-start justify-center">
                 <Image src={welcomeMobileApp1} alt="screen app 1" width={183} />
                 <Image
                     src={welcomeMobileApp2}
                     alt="screen app 2"
                     width={198}
-                    className="absolute top-0 left-[175px]"
+                    className="-ml-8"
                 />
             </CardContent>
             <CardFooter className="flex items-center justify-center gap-7">
-                <p>Google Play</p>
-                <p>RuStore</p>
-                <p>Apple Play</p>
+                <WelcomeLink href="https://play.google.com/store/search?q=unicorn&c=apps">
+                    <AndroidIcon /> Google Play
+                </WelcomeLink>
+                <WelcomeLink href="https://www.rustore.ru/">
+                    <AndroidIcon /> RuStore
+                </WelcomeLink>
+                <WelcomeLink href="https://www.apple.com/apple-pay/">
+                    <AndroidIcon /> Apple Play
+                </WelcomeLink>
             </CardFooter>
         </Card>
     );

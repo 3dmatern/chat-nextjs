@@ -18,11 +18,12 @@ import { FormSuccess } from "@/components/auth/ui/form-success";
 import { FormError } from "@/components/auth/ui/form-error";
 
 import { RegisterSchema } from "@/schemas";
+import { register } from "@/actions/register";
 
 export function RegisterForm() {
     const [isPending, startTransition] = useTransition();
     const [error, setError] = useState("");
-    const [succes, setSuccess] = useState("");
+    const [success, setSuccess] = useState("");
     const form = useForm({
         resolver: zodResolver(RegisterSchema),
         defaultValues: {
@@ -34,8 +35,16 @@ export function RegisterForm() {
         setError("");
         setSuccess("");
 
-        startTransition(() => {
-            console.log(values);
+        startTransition(async () => {
+            const result = await register(values);
+
+            if (result.error) {
+                setError((prev) => result.error);
+            }
+
+            if (result.success) {
+                setSuccess((prev) => result.success);
+            }
         });
 
         form.reset();
@@ -71,9 +80,13 @@ export function RegisterForm() {
                         )}
                     />
 
-                    <FormSuccess message={succes} />
+                    <FormSuccess message={success} />
                     <FormError message={error} />
-                    <Button disabled={isPending} className="w-full">
+                    <Button
+                        type="submit"
+                        disabled={isPending}
+                        className="w-full"
+                    >
                         Sign up
                     </Button>
                 </form>

@@ -44,7 +44,7 @@ export const register = async (values) => {
             return response;
         }
     } catch (error) {
-        console.error("Ошибка при регистрации пользователя: ", error);
+        console.error("Error while registering user:", error);
 
         return {
             error: "Что-то пошло не так при регистрации.",

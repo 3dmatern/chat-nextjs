@@ -16,7 +16,12 @@ import { WelcomeLink } from "@/components/auth/ui/welcome-link";
 
 export function Welcome({ className }) {
     return (
-        <Card className={cn("text-center border-none rounded-none", className)}>
+        <Card
+            className={cn(
+                "text-center border-none rounded-none shadow-none",
+                className
+            )}
+        >
             <CardHeader>
                 <CardTitle className="lg:text-xl">
                     Chat | Next JS скоро для мобильных устройств

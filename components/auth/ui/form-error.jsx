@@ -6,7 +6,7 @@ export function FormError({ message }) {
     return (
         <div
             className="
-                bg-destructive-500/15 p-3 rounded-md
+                bg-destructive/15 p-3 rounded-md
                 flex items-center gap-x-2
                 text-sm text-destructive
             "

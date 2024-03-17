@@ -4,8 +4,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 
-import { LoginSchema } from "@/schemas";
-import { login } from "@/actions/login";
+import { LoginTwoFactorSchema } from "@/schemas";
+import { loginTwoFactor } from "@/actions/login";
 
 import { CardWrapper } from "@/components/auth/card-wrapper";
 import {
@@ -19,14 +19,14 @@ import { Input } from "@/components/ui/input";
 import { FormError } from "@/components/auth/ui/form-error";
 import { Button } from "@/components/ui/button";
 
-export function LoginForm({ onOpenTwoFactorForm }) {
+export function LoginTwoFactorForm({ email, onCloseTwoFactorForm }) {
     const [isPending, startTransition] = useTransition();
     const [error, setError] = useState("");
 
     const form = useForm({
-        resolver: zodResolver(LoginSchema),
         defaultValues: {
-            email: "",
+            email,
+            twoFactor: "",
         },
     });
 
@@ -34,14 +34,17 @@ export function LoginForm({ onOpenTwoFactorForm }) {
         setError((prev) => "");
 
         startTransition(async () => {
-            const result = await login(values);
+            const result = await loginTwoFactor({
+                ...values,
+                twoFactor: +values.twoFactor,
+            });
 
-            if (result.error) {
+            if (result?.error) {
                 setError((prev) => result.error);
             }
 
-            if (result.success) {
-                onOpenTwoFactorForm(result.success);
+            if (result?.success) {
+                onCloseTwoFactorForm();
             }
 
             form.reset();
@@ -51,7 +54,7 @@ export function LoginForm({ onOpenTwoFactorForm }) {
     return (
         <CardWrapper
             headerTitle="Sign in to Chat | Next JS"
-            headerLabel="Enter your email to log into your account."
+            headerLabel="Enter your code from email"
             backButtonLabel="Ещё нет аккаунта?"
             backButtonHref="/auth/register"
         >
@@ -62,14 +65,14 @@ export function LoginForm({ onOpenTwoFactorForm }) {
                 >
                     <FormField
                         control={form.control}
-                        name="email"
+                        name="twoFactor"
                         render={({ field }) => (
                             <FormItem>
                                 <FormControl>
                                     <Input
                                         {...field}
-                                        type="email"
-                                        placeholder="Enter your email..."
+                                        type="number"
+                                        placeholder="Enter your code..."
                                         disabled={isPending}
                                     />
                                 </FormControl>
@@ -77,14 +80,13 @@ export function LoginForm({ onOpenTwoFactorForm }) {
                             </FormItem>
                         )}
                     />
-
                     <FormError message={error} />
                     <Button
                         type="submit"
                         disabled={isPending}
                         className="w-full"
                     >
-                        Sign in
+                        Send
                     </Button>
                 </form>
             </Form>

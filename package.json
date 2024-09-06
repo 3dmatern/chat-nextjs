@@ -7,7 +7,8 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
-        "seed": "node -r dotenv/config ./scripts/seed.js"
+        "seed": "node -r dotenv/config ./scripts/seed.js",
+        "postinstall": "prisma generate"
     },
     "dependencies": {
         "@hookform/resolvers": "^3.3.4",
@@ -21,7 +22,7 @@
         "bcryptjs": "^2.4.3",
         "class-variance-authority": "^0.7.0",
         "clsx": "^2.1.0",
-        "next": "14.0.4",
+        "next": "^14.2.8",
         "next-auth": "^4.24.6",
         "next-themes": "^0.2.1",
         "nodemailer": "^6.9.12",
